@@ -60,7 +60,6 @@ async function loadConfig() {
  */
 function createQuestions(config) {
   const choices = getEmojiChoices(config)
-  console.log(config)
   const fuzzy = new fuse(choices, {
     shouldSort: true,
     threshold: 0.4,
