@@ -29,7 +29,7 @@ function getEmojiChoices({ types, symbol }) {
 }
 
 async function loadConfig() {
-  const getConfig = obj => obj && obj.config && obj.config['cz-emoji']
+  const getConfig = obj => obj && obj.config && obj.config['@ksky521/cz-emoji']
 
   const readFromPkg = () => readPkg().then(res => getConfig(res.pkg))
 
@@ -60,7 +60,7 @@ async function loadConfig() {
  */
 function createQuestions(config) {
   const choices = getEmojiChoices(config)
-
+  console.log(config)
   const fuzzy = new fuse(choices, {
     shouldSort: true,
     threshold: 0.4,
